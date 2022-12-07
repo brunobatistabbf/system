@@ -50,6 +50,19 @@ public class processDetails {
         return newQueue;
     }
 
+    public static ArrayList<processDetails> sendFromState(ArrayList<processDetails> newQueue,
+            ArrayList<processDetails> readyQueue, ArrayList<processDetails> resourceQueue) {
+        if (!newQueue.isEmpty()) {
+            for (processDetails process : resourceQueue) {
+                if (!readyQueue.contains(process) && !resourceQueue.contains(process)) {
+                    readyQueue.add(process);
+                }
+                newQueue.clear();
+            }
+        }
+        return readyQueue;
+    }
+
     // Verifica a fila de recursos a cada 3 segundos
     public static ArrayList<processDetails> threeSecondTimer(ArrayList<processDetails> resourceQueue,
             ArrayList<processDetails> readyQueue) {
@@ -71,7 +84,7 @@ public class processDetails {
         return readyQueue;
     }
 
-    public static void chackProcessesWaiting(ArrayList<processDetails> resourceQueue) {
+    public static void checkProcessesWaiting(ArrayList<processDetails> resourceQueue) {
         if (!resourceQueue.isEmpty()) {
             for (processDetails process : resourceQueue) {// processo de impressão em espera na fila de recursos
                 System.out.println("Processo " + process.getProcessName() + " esta esperando o estado ");
@@ -81,9 +94,9 @@ public class processDetails {
         }
     }
 
-    public static boolean checkProcessesReady(ArrayList<processDetails> readyQueue) {
-        if (!readyQueue.isEmpty()) { // printa o processo na fila de pontos
-            for (processDetails process : readyQueue) {
+    public static boolean checkProcessesReady(ArrayList<processDetails> resourceQueue) {
+        if (!resourceQueue.isEmpty()) { // printa o processo na fila de pontos
+            for (processDetails process : resourceQueue) {
                 System.out.println("Processo " + process.getProcessName() + " está pronto");
                 return true;
             }
