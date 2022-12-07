@@ -1,0 +1,4 @@
+O simulador deverá executar 500 instruções para cada algoritmo de substituição de página.
+Os algoritmos de substituição de páginas para serem implementados são; NRU, FIFO, FIFO-SC e RELÓGIO (Escolha 2 Algoritmos para implementar)
+No início da execução deve ser impresso as matriz 10x5 e a matriz 100x5, e ao final das 500 instruções deve ser impresso novamente a matriz 10x5 e a matriz 100x5.
+Faça um vídeo para cada algoritmo de 5 a 10 minutos explicando o algoritmo, o código e os resultados encontrados.
