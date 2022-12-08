@@ -69,11 +69,10 @@ class clock {
             if (!findAndUpdate(x, arr, second_chance, frames)) {
                 pointer = replaceAndUpdate(x, arr,
                         second_chance, frames, pointer);
-
                 pf++;
             }
         }
 
-        System.out.println("Total page faults were " + pf);
+        System.out.println("Total de Page Faults foram " + pf);
     }
 }
